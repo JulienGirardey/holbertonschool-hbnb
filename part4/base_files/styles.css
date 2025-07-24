@@ -3,30 +3,214 @@
   You'll probably need to override some of theese styles.
 */
 
+/* Police personnalisée déjà déclarée */
+@font-face {
+    font-family: super-smash;
+    src: url("images/super_smash_4_1_by_pokemon_diamond-d7zxu6d.ttf");
+}
+
+/* Reset et base */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: super-smash, Arial, sans-serif;
 }
 
 body {
-    background-color: #f4f4f4;
-    color: #333;
+    background: radial-gradient(circle at 50% 20%, #ffe066 0%, #ff003c 100%);
+    color: #222;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
+/* Header façon bannière Smash */
 header {
-    background-color: #333;
+    background: linear-gradient(90deg, #222 0%, #ff003c 100%);
     color: #fff;
+    padding: 1.5rem 0 1rem 0;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    border-bottom: 4px solid #ffcc00;
+    text-align: center;
+}
+
+.logo {
+    height: 90px;
+    display: block;
+    margin: 0 auto 10px auto;
+    filter: drop-shadow(0 0 10px #ffcc00);
+}
+
+/* Navigation façon menu de jeu */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 10px;
+}
+
+nav a, .login-button {
+    color: #fff;
+    background: linear-gradient(90deg, #ff003c 0%, #ffcc00 100%);
+    padding: 0.7em 1.5em;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-shadow: 1px 1px 2px #222;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.1s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    border: none;
+    outline: none;
+    margin-left: 1rem;
+}
+nav a:hover, .login-button:hover {
+    background: linear-gradient(90deg, #ffcc00 0%, #ff003c 100%);
+    transform: scale(1.08) rotate(-2deg);
+}
+
+/* Main centré */
+main {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Cartes places et reviews */
+.place-card, .review-card {
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 6px 24px rgba(255,0,60,0.08), 0 0 0 4px #ffcc0022;
+    font-size: 1.1rem;
+    transition: transform 0.1s, box-shadow 0.1s;
+    max-width: 400px;
+    width: 100%;
+}
+.place-card:hover, .review-card:hover {
+    transform: scale(1.03) rotate(-1deg);
+    box-shadow: 0 12px 32px rgba(255,0,60,0.18), 0 0 0 4px #ff003c33;
+}
+
+/* Détails du lieu */
+.place-details {
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid #ff003c;
+    border-radius: 16px;
+    background: #fff7e6;
+    box-shadow: 0 2px 8px #ffcc0033;
+    max-width: 600px;
+    width: 100%;
+}
+.place-info {
+    text-align: center;
+    margin: 2.5rem 0;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: #fff;
     padding: 1rem;
 }
 
-nav a {
-    color: #fff;
-    text-decoration: none;
-    margin-left: 1rem;
+/* Filtres */
+#filter {
+    background: #fff7e6;
+    border: 2px solid #ffcc00;
+    border-radius: 16px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px #ffcc0033;
+    max-width: 400px;
+    width: 100%;
+}
+#filter h2 {
+    color: #ff003c;
+    font-family: super-smash, Arial, sans-serif;
+    margin-bottom: 1rem;
 }
 
-main {
-    padding: 2rem;
+/* Champs de formulaire */
+input, select, textarea {
+    border: 2px solid #ffcc00;
+    border-radius: 8px;
+    padding: 0.5em 1em;
+    font-size: 1rem;
+    margin: 0.5em 0;
+    background: #fff;
+    font-family: inherit;
+    transition: border 0.2s;
+}
+input:focus, select:focus, textarea:focus {
+    border: 2px solid #ff003c;
+    outline: none;
+}
+
+/* Bouton "Ajouter un avis" déjà stylisé */
+.add-review {
+    background: linear-gradient(90deg, #ffcc00 0%, #ff003c 100%);
+    color: #fff;
+    font-family: super-smash, Arial, sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 12px 32px;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2), 0 0 0 4px #fff inset;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: transform 0.1s, box-shadow 0.1s;
+    margin: 20px auto;
+    display: block;
+}
+.add-review:hover {
+    transform: scale(1.07) rotate(-2deg);
+    box-shadow: 0 8px 24px rgba(255,0,60,0.3), 0 0 0 4px #ffcc00 inset;
+    background: linear-gradient(90deg, #ff003c 0%, #ffcc00 100%);
+}
+
+/* Bouton détails */
+.details-button {
+    background: linear-gradient(90deg, #ff003c 0%, #ffcc00 100%);
+    color: #fff;
+    font-family: super-smash, Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 24px;
+    border: none;
+    border-radius: 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: transform 0.1s, box-shadow 0.1s;
+    box-shadow: 0 2px 8px rgba(255,0,60,0.15);
+}
+.details-button:hover {
+    background: linear-gradient(90deg, #ffcc00 0%, #ff003c 100%);
+    transform: scale(1.05) rotate(-2deg);
+}
+
+/* Liste sans puces */
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+/* Footer */
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+    color: #fff;
+    text-shadow: 1px 1px 2px #222;
+    background: #222;
+    padding: 1rem 0;
+    border-top: 4px solid #ffcc00;
+    font-size: 1rem;
 }

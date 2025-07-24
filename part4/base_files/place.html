@@ -5,14 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Place Details</title>
     <link rel="stylesheet" href="styles.css">
+	<link rel="shortcut icon" type="image/png" href="images/icon-smash.png">
 </head>
 <body>
+	<header>
+		<img src="images/super-smashbros-logo.png" alt="The logo of this application" class="logo">
+        <nav>
+			<a href="index.html">Home</a>
+            <a class="login-button" href="login.html" id="login-link">Login</a>
+        </nav>
+    </header>
     <main>
         <section id="place-details">
             <!-- Place details will be populated dynamically -->
+			 <div class="place-details">
+				<h1 class="title-place">Nom du lieu</h1>
+				<div class="place-info">
+					<p><strong>Hote :</strong> Jean Dupont</p>
+					<p><strong>Prix :</strong> 120€ par nuit</p>
+					<p><strong>Description :</strong> Un bel appartement lumineux au centre-ville.</p>
+					<p><strong>Equipements :</strong></p>
+					<br>
+					<ul>
+						<li>Wi-fi</li>
+						<li>Climatisation</li>
+						<li>Parking</li>
+						<li>Animaux acceptes</li>
+					</ul>
+				</div>
+			 </div>
         </section>
         <section id="reviews">
+			<h2>commentaire des lieux</h2>
             <!-- Reviews will be populated dynamically -->
+			 <div class="review-card">
+				<p><strong>Comment :</strong> Super logement</p>
+				<p><strong>User name :</strong> Coco l'asticot</p>
+				<p><strong>Rating :</strong> 4/5</p>
+			 </div>
+				<button class="add-review" onclick="window.location.href='add_review.html'" id="add-review-btn">Ajouter un avis</button>
         </section>
         <section id="add-review">
             <h2>Add a Review</h2>
