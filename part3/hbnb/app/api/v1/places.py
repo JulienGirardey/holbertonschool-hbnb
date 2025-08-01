@@ -133,17 +133,7 @@ class PlaceResource(Resource):
                 'last_name': owner.last_name,
                 'email': owner.email
             }
-
-            response = {
-                'id': place.id,
-                'title': place.title,
-                'description': place.description,
-                'price': place.price,
-                'latitude': place.latitude,
-                'longitude': place.longitude,
-                'owner': owner_data,
-            }
-
+            
             amenities_data = [
                 {
                     'id': amenity.id,
@@ -152,6 +142,17 @@ class PlaceResource(Resource):
                 for amenity in place.amenities
             ]
 
+            response = {
+                'id': place.id,
+                'title': place.title,
+                'description': place.description,
+                'price': place.price,
+                'latitude': place.latitude,
+                'longitude': place.longitude,
+                'amenities': amenities_data,
+                'owner': owner_data,
+            }
+            
             if amenities_data:
                 response['amenities'] = amenities_data
 
