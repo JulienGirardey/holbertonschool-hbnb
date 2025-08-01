@@ -1,4 +1,4 @@
--- database: development.db
+-- database: /Users/Dev/Holberton/holbertonschool-hbnb/part3/hbnb/instance/development.db
 -- inserte data and create admin
 -- and add 3 amenity
 

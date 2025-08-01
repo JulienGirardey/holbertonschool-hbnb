@@ -161,7 +161,9 @@ class PlaceResource(Resource):
                     'id': review.id,
                     'text': review.text,
                     'rating': review.rating,
-                    'user_id': review.user.id
+                    'user_id': review.user.id,
+                    'user_firstName': review.user.first_name,
+                    'user_lastName': review.user.last_name
                 }
                 for review in place.reviews
             ]
